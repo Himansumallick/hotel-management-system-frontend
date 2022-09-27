@@ -67,13 +67,13 @@
   color: #fff;
 }
 
-.nav-links-mobile {
+/* .nav-links-mobile {
   display: none;
 }
 
 .menu-icon {
   display: none;
-}
+} */
 
 @media screen and (max-width: 960px) {
   .NavbarItems {

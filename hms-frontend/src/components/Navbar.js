@@ -21,11 +21,11 @@ function Navbar() {
             RESORT
           </Link>
           <div className="menu-icon" onClick={handleClick}>
-            <i
+            {/* <i
               className={
                 click ? "fa-solid fa-xmark" : "fa-solid fa-bars-staggered"
               }
-            />
+            /> */}
             <ul className={click ? "nav-menu active" : "nav-menu"}>
               <li className="nav-item">
                 <Link to="/" className="nav-links" onClick={closeMobileMenu}>
@@ -44,7 +44,7 @@ function Navbar() {
               <li className="nav-item">
                 <Link
                   to="/signIn"
-                  className="nav-links-mobile"
+                  className="nav-links"
                   onClick={closeMobileMenu}
                 >
                   Sign In
@@ -53,7 +53,7 @@ function Navbar() {
               <li className="nav-item">
                 <Link
                   to="/signUp"
-                  className="nav-links-mobile"
+                  className="nav-links"
                   onClick={closeMobileMenu}
                 >
                   Sign Up
