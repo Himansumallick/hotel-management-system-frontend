@@ -1,16 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
-  const [click, setClick] = useState(false);
-  const handleClick = () => {
-    setClick(!click);
-  };
-
-  const closeMobileMenu = () => {
-    setClick(false);
-  };
   return (
     <>
       <nav className="navbar">
@@ -20,43 +12,21 @@ function Navbar() {
             <i class="fa-sharp fa-solid fa-hotel"></i>
             RESORT
           </Link>
-          <div className="menu-icon" onClick={handleClick}>
-            {/* <i
-              className={
-                click ? "fa-solid fa-xmark" : "fa-solid fa-bars-staggered"
-              }
-            /> */}
-            <ul className={click ? "nav-menu active" : "nav-menu"}>
+          <div className="menu-icon">
+            <ul className="menu-links">
               <li className="nav-item">
-                <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+                <Link to="/" className="nav-links">
                   Home
                 </Link>
               </li>
               <li className="nav-item">
-                <Link
-                  to="/services"
-                  className="nav-links"
-                  onClick={closeMobileMenu}
-                >
+                <Link to="/services" className="nav-links">
                   Services
                 </Link>
               </li>
               <li className="nav-item">
-                <Link
-                  to="/signIn"
-                  className="nav-links"
-                  onClick={closeMobileMenu}
-                >
+                <Link to="/signIn" className="nav-links">
                   Sign In
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  to="/signUp"
-                  className="nav-links"
-                  onClick={closeMobileMenu}
-                >
-                  Sign Up
                 </Link>
               </li>
             </ul>
