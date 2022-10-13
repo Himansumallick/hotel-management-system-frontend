@@ -1,55 +1,47 @@
 import React from "react";
-import { Icon } from "semantic-ui-react";
+import { Link } from "react-router-dom";
+import "../pages/signIn.css";
+import LogoImg from "/home/himansu/Desktop/Projects/HMS/hotel-management-system-frontend/hms-frontend/src/media/logo-color.png";
 
-function signIn() {
+const SignIn = () => {
   return (
-    <div className="signin-container">
-      <div className="signin-frame">
-        <img src="" alt="" className="logo-img" />
-        <div className="email">
-          <label htmlFor="email"> Email</label>
-          <div className="email-input">
-            <Icon size="1.3em" name="mail" />
-            <input
-              className="email"
-              style={{
-                width: "90%",
-                height: "30px",
-                background: "#f8f8f8",
-                borderRadius: "8px",
-              }}
-              type="email"
-              name="email"
-              placeholder=""
-            />
+    <>
+      <div className="wrapper">
+        <div className="container1">
+          <div className="container2">
+            <div className="logo">
+              <img src={LogoImg} alt="Logo" />
+            </div>
+            <div className="email">
+              <h3>
+                Email <i class="fa-solid fa-envelope"></i>
+              </h3>
+              <div>
+                <input type="email" placeholder="john@gmail.com" />
+              </div>
+            </div>
+            <div className="password">
+              <h3>
+                Password <i class="fa-solid fa-lock"></i>
+              </h3>
+              <div>
+                <input type="password" />
+              </div>
+            </div>
+            <div>
+              <Link to="/dashboard">
+                <button class="ui inverted purple button">Submit</button>
+              </Link>
+            </div>
           </div>
-        </div>
-        <div className="password">
-          <label htmlFor="password">Password</label>
-          <div className="sec-password-inputs">
-            <Icon size="1.3em" name="lock" />
-            <input
-              style={{
-                width: "90%",
-                height: "30px",
-                background: "#f8f8f8",
-                borderRadius: "8px",
-              }}
-              className="password"
-              type="password"
-              name="password"
-              placeholder=""
-            />
+          <div className="footer">
+            <Link to="/signUp">SignUp</Link>
+            <Link to="/passwordRecovery">Forgot Password</Link>
           </div>
         </div>
       </div>
-      <button className="login">Login </button>
-      <div className="footer">
-        <span>Signup</span>
-        <span>Forgot Password?</span>
-      </div>
-    </div>
+    </>
   );
-}
+};
 
-export default signIn;
+export default SignIn;

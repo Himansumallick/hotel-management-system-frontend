@@ -1,38 +1,38 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import SignIn from "./pages/signIn";
+import Home from "./pages/Home";
 
 function Navbar() {
   return (
     <>
-      <nav className="navbar">
-        <div className="navbar-container">
-          <Link to="/" className="navbar-logo">
-            GALAXY
-            <i class="fa-sharp fa-solid fa-hotel"></i>
-            RESORT
+      <div class="nav_wrapper">
+        <div class="box a">
+          <Link to="/" className="navbar-logo" element={<Home />}>
+            <h1>
+              GALAXY
+              <i class="fa-sharp fa-solid fa-hotel"></i>
+              RESORT
+            </h1>
           </Link>
-          <div className="menu-icon">
-            <ul className="menu-links">
-              <li className="nav-item">
-                <Link to="/" className="nav-links">
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/services" className="nav-links">
-                  Services
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/signIn" className="nav-links">
-                  Sign In
-                </Link>
-              </li>
-            </ul>
-          </div>
         </div>
-      </nav>
+        <div class="box b">
+          <Link to="/" className="nav-links" element={<Home />}>
+            HOME
+          </Link>
+        </div>
+        <div class="box c">
+          <Link to="/services" className="nav-links">
+            SERVICES
+          </Link>
+        </div>
+        <div class="box d">
+          <Link to="/signin" className="nav-links">
+            SIGNIN
+          </Link>
+        </div>
+      </div>
     </>
   );
 }

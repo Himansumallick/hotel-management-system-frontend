@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.dashboard{
+    display: flex;
+    height: 100vh;
+    background-color: rgb(117, 165, 165);
+    grid-row: 1fr 1fr auto;
+    flex-direction: column;
+    place-items: center;
+}
+
+.searchbar{
+    display: flex;
+    height: 10vh;
+    width: 80vw;
+    background-color: rgb(56, 70, 70);
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 150%;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+    column-gap: 50px;
+}
+
+.checkin{
+    display:flex;
+    justify-content: center;
+    justify-items: center;
+    column-gap: 10px;
+}
+
+.checkout {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    column-gap: 10px;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    column-gap: 10px;
+}
+
+.room_info{
+    background-color: brown;
+    width: 60vw;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+}
