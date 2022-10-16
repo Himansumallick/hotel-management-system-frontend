@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.service_container {
+    background-color: rgb(113, 112, 116);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    row-gap: 5px;
+}
+
+.food{
+    background-image: url("/home/himansu/Desktop/Projects/HMS/hotel-management-system-frontend/hms-frontend/src/media/foodimg.jpg");
+    display: flex;
+    width: 1350px;
+    justify-content: center;
+    height: 330px;
+    border-radius: 3rem;
+}
+
+.transport {
+    background-image: url("/home/himansu/Desktop/Projects/HMS/hotel-management-system-frontend/hms-frontend/src/media/transportimg.jpg");
+    display: flex;
+    width: 1350px;
+    justify-content: center;
+    height: 330px;
+    border-radius: 3rem;
+}
+
+.music {
+    background-image: url("/home/himansu/Desktop/Projects/HMS/hotel-management-system-frontend/hms-frontend/src/media/music1.jpg");
+    display: flex;
+    width: 1350px;
+    justify-content: center;
+    height: 330px;
+    border-radius: 3rem;
+}
+
+.fbtn{
+    display: grid;
+    place-items: center;
+}
+
+.tbtn {
+    display: grid;
+    place-items: center;
+}
+
+.mbtn {
+    display: grid;
+    place-items: center;
+}

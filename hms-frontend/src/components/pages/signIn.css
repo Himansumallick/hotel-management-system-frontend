@@ -6,8 +6,9 @@
 
 .wrapper {
    background-color: rgb(29, 30, 30);
-   height: 100vh;
-   width: 100vw;
+   height: 100%;
+   width: 100%;
+   position: absolute;
    /* position: relative; */
    /* display: flex;
    justify-content: center;
@@ -17,7 +18,7 @@
 }
 
 .container1{
-   background-color: rgb(167, 161, 161);
+   background-color: rgb(177, 166, 65);
    height: 70vh;
    width: 40vw;
    position: absolute;
@@ -37,17 +38,31 @@
    height: 400px;
    width: 95%; 
    border-radius: 2rem;
-   box-shadow: 10px 5px 20px 5px rgb(205, 118, 234);
-   
 }
 
-.footer{
-   color: rgb(44, 44, 43);
+.signfooter{
+   background-color: rgb(40, 38, 38);
    display: flex;
    border-radius: 2rem;
    justify-content: space-around;
+   justify-self: center;
+   justify-items: center;
    width: 95%;
-   box-shadow: 10px 5px 20px 5px rgb(14, 13, 14);
+   height: 40px;
+   
+}
+.signup {
+   justify-content: space-around;
+   justify-self: center;
+   justify-items: center;
+   color: rgb(205, 118, 234);
+}
+
+.recovery {
+   justify-content: space-around;
+   justify-self: center;
+   justify-items: center;
+   color: rgb(205, 118, 234);
 }
 
 .email h3{
@@ -55,10 +70,6 @@
 }
 
 .password h3 {
-   color: rgb(205, 118, 234);
-}
-
-.footer h3{
    color: rgb(205, 118, 234);
 }
 

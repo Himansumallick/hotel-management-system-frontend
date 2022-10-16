@@ -27,17 +27,17 @@ video {
 }
 
 .hero-container>h1 {
-    color: #fff;
+    color: rgb(234, 236, 79);
     font-size: 100px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin-top: -100px;
 }
 
 .hero-container>p {
     margin-top: 8px;
-    color: #fff;
+    color: rgb(214, 215, 124);
     font-size: 32px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-        'Lucida Sans', Arial, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .hero-btns {

@@ -34,9 +34,13 @@ const SignIn = () => {
               </Link>
             </div>
           </div>
-          <div className="footer">
-            <Link to="/signUp">SignUp</Link>
-            <Link to="/passwordRecovery">Forgot Password</Link>
+          <div className="signfooter">
+            <Link className="signup" to="/signUp">
+              SignUp
+            </Link>
+            <Link className="recovery" to="/passwordRecovery">
+              Forgot Password
+            </Link>
           </div>
         </div>
       </div>

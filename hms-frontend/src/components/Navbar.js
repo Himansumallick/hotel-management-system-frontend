@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-import SignIn from "./pages/signIn";
 import Home from "./pages/Home";
 
 function Navbar() {
