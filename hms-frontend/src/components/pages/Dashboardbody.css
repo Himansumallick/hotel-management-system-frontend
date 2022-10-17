@@ -11,6 +11,7 @@
     grid-row: 1fr 1fr auto;
     flex-direction: column;
     place-items: center;
+    overflow: auto;
 }
 
 .searchbar{

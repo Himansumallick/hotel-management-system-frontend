@@ -9,6 +9,7 @@ function roomInfoView(props) {
     is_seafacing,
     has_sunset_view,
     price,
+    image,
   } = props.eachRoom;
   return (
     <article className="roominfo">
@@ -19,7 +20,9 @@ function roomInfoView(props) {
       <h2>Seafacing : {is_seafacing}</h2>
       <h2>Sunset View: {has_sunset_view}</h2>
       <h1>Price: {price}</h1>
+      {image && <img src={image} />}
       <button
+        alt="image"
         class="ui green button"
         onClick={() => {
           alert("booked");

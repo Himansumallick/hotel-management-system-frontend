@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "semantic-ui-react";
 import "../pages/Dashboardbody.css";
-// import RoomList from "./roomInfo/roomList";
+import RoomList from "./roomInfo/roomList";
 
 const Dashboardbody = () => {
   return (
@@ -43,7 +43,7 @@ const Dashboardbody = () => {
         </div>
       </div>
       <div className="room_info">
-        <h5>Himansu</h5>
+        <RoomList />
       </div>
     </div>
   );

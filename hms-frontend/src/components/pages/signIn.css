@@ -15,11 +15,12 @@
    align-items: center; */
    display: grid;
    place-items: center;
+   overflow: auto;
 }
 
 .container1{
    background-color: rgb(177, 166, 65);
-   height: 70vh;
+   height: 480px;
    width: 40vw;
    position: absolute;
    border-radius: 2rem;

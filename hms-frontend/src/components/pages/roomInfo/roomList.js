@@ -1,16 +1,31 @@
-import React from "react";
-import { ReactDOM } from "react-dom";
+import React, { useEffect, useState } from "react";
 import EachRoom from "../roomInfo/eachRoominfo.js";
-import Rooms from "../roomInfo/room.js";
+import { fetchAllRooms } from "../roomInfo/room.js";
 
-function roomList() {
+const RoomList = () => {
+  const [rooms, setRooms] = useState([]);
+
+  const getAllRooms = async () => {
+    try {
+      const response = await fetchAllRooms();
+      setRooms(response);
+    } catch (e) {
+      setRooms([]);
+      alert("An error occurred");
+    }
+  };
+
+  useEffect(() => {
+    getAllRooms();
+  }, []);
+
   return (
     <section className="roomList">
-      {Rooms.map((eachRoom, index) => {
+      {rooms.map((eachRoom, index) => {
         return <EachRoom key={eachRoom.id} eachRoom={eachRoom}></EachRoom>;
       })}
     </section>
   );
-}
+};
 
-export default roomList;
+export default RoomList;
