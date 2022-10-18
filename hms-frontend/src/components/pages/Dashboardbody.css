@@ -50,9 +50,9 @@
 }
 
 .room_info{
-    background-color: brown;
     width: 60vw;
     justify-content: center;
     justify-items: center;
     justify-self: center;
+    row-gap: 2rem;
 }

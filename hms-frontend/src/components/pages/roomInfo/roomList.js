@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import EachRoom from "../roomInfo/eachRoominfo.js";
 import { fetchAllRooms } from "../roomInfo/room.js";
+import "./room.css";
 
 const RoomList = () => {
   const [rooms, setRooms] = useState([]);

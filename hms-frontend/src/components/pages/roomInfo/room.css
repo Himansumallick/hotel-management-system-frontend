@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.roomInfoContainer{
+    display: flex;
+    background: rgb(176, 154, 212);
+    border-radius: 1rem;
+    padding: 1rem 3rem;
+    row-gap:1rem;
+    column-gap: 2rem;
+}
+
+.roomList {
+    display: grid;
+    background-color: rgb(33, 36, 48);
+    padding: 1rem 3rem;
+    row-gap: 2rem;
+}
+
+.infodiv{
+    width:200px;
+}
+
+.imgdiv{
+    width: 400px;
+    height: 250px;
+    border: 5rem;
+    border-color: black;
+}
+
+.imgdiv img{
+    height: 250px;
+    border-radius: 1rem;
+    border: 0.3rem;
+    border-color: black;
+    border-style: solid;
+}

@@ -1,35 +1,56 @@
 import React from "react";
+import "./room.css";
 
 function roomInfoView(props) {
   const {
     room_number,
     occupants_capacity,
-    no_of_bed,
+    number_of_bed,
     has_ac,
     is_seafacing,
     has_sunset_view,
     price,
     image,
   } = props.eachRoom;
+
   return (
-    <article className="roominfo">
-      <h2>Room Number : {room_number}</h2>
-      <h2>Capacity : {occupants_capacity}</h2>
-      <h2>Number of bed : {no_of_bed}</h2>
-      <h2>AC : {has_ac} </h2>
-      <h2>Seafacing : {is_seafacing}</h2>
-      <h2>Sunset View: {has_sunset_view}</h2>
-      <h1>Price: {price}</h1>
-      {image && <img src={image} />}
-      <button
-        alt="image"
-        class="ui green button"
-        onClick={() => {
-          alert("booked");
-        }}
-      >
-        Book Now
-      </button>{" "}
+    <article className="roomInfoContainer">
+      <div className="infodiv">
+        <div>
+          <h2>Room Number : {room_number}</h2>
+        </div>
+        <div>
+          <h2>Capacity : {occupants_capacity}</h2>
+        </div>
+        <div>
+          <h2>Number of bed : {number_of_bed}</h2>
+        </div>
+        <div>
+          <h2>AC : {has_ac ? "Yes" : "No"} </h2>
+        </div>
+        <div>
+          <h2>Seafacing : {is_seafacing ? "Yes" : "No"}</h2>
+        </div>
+        <div>
+          <h2>Sunset View: {has_sunset_view ? "Yes" : "No"}</h2>
+        </div>
+        <div>
+          <h1>Price: $ {price}</h1>
+        </div>
+        <div>
+          <button
+            class="ui green button"
+            onClick={() => {
+              alert("booked");
+            }}
+          >
+            Book Now
+          </button>{" "}
+        </div>
+      </div>
+      <div className="imgdiv">
+        <div>{image && <img alt="room_image" src={image} />}</div>
+      </div>
     </article>
   );
 }
