@@ -1,0 +1,11 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.bookingForm{
+    display: flex;
+    background-color: rgb(182, 128, 236);
+    place-items: center;
+}

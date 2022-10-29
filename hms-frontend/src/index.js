@@ -10,6 +10,8 @@ import Services from "./components/pages/services/service.js";
 import Food from "./components/pages/services/food.js";
 import Music from "./components/pages/services/music.js";
 import Transport from "./components/pages/services/transport.js";
+import BookingPage from "./components/pages/bookings/bookingPage.js";
+import BookingConfirmationPage from "./components/pages/bookings/bookingConfirmationPage.js";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +31,8 @@ const router = createBrowserRouter([
         path: "dashboard",
         element: <Dashboard />,
       },
+      { path: "bookingPage", element: <BookingPage /> },
+      { path: "bookingConfirmationPage", element: <BookingConfirmationPage /> },
       {
         path: "services",
         element: <Services />,

@@ -1,5 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./room.css";
+import BookingPage from "../bookings/bookingPage";
 
 function roomInfoView(props) {
   const {
@@ -38,14 +40,11 @@ function roomInfoView(props) {
           <h1>Price: $ {price}</h1>
         </div>
         <div>
-          <button
-            class="ui green button"
-            onClick={() => {
-              alert("booked");
-            }}
-          >
-            Book Now
-          </button>{" "}
+          <Link to="/bookingPage">
+            <button class="ui green button" onClick={BookingPage}>
+              Book Now
+            </button>{" "}
+          </Link>
         </div>
       </div>
       <div className="imgdiv">
