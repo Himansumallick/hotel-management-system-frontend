@@ -2,10 +2,22 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
 .bookingForm{
-    display: flex;
-    background-color: rgb(182, 128, 236);
+    background-color: rgb(98, 150, 150);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: grid;
     place-items: center;
+    overflow: auto;
+}
+
+table,th,td {
+    width: 40%;
+    border: 1px solid;
+    text-align: center;
+    background-color: brown;
 }

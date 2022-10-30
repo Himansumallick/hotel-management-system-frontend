@@ -12,6 +12,7 @@ import Music from "./components/pages/services/music.js";
 import Transport from "./components/pages/services/transport.js";
 import BookingPage from "./components/pages/bookings/bookingPage.js";
 import BookingConfirmationPage from "./components/pages/bookings/bookingConfirmationPage.js";
+import LocalUser from "./components/pages/localUser/localUser.js";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,7 @@ const router = createBrowserRouter([
         path: "signin",
         element: <SignIn />,
       },
+      { path: "localUser", element: <LocalUser /> },
       {
         path: "dashboard",
         element: <Dashboard />,

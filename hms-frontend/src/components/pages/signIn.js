@@ -29,7 +29,7 @@ const SignIn = () => {
               </div>
             </div>
             <div>
-              <Link to="/dashboard">
+              <Link to="/localUser">
                 <button class="ui inverted purple button">Submit</button>
               </Link>
             </div>
