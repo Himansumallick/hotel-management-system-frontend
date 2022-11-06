@@ -1,25 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useOutletContext } from "react-router-dom";
 import "../bookings/bookingPage.css";
 
-function bookingPage(props) {
-  var roomNumber = document.getElementById("roomNumber").value;
-  localStorage.setItem("roomNumber", roomNumber);
+const BookingPage = () => {
+  const [bookingData, setBookingData] = useOutletContext();
 
-  var checkinDate = document.getElementById("checkinDate").value;
-  localStorage.setItem("checkinDate", checkinDate);
-
-  var checkoutoutDate = document.getElementById("checkoutoutDate").value;
-  localStorage.setItem("checkoutoutDate", checkoutoutDate);
-
-  var bookedBy = document.getElementById("bookedBy").value;
-  localStorage.setItem("bookedBy", bookedBy);
-
-  var contactNumber = document.getElementById("contactNumber").value;
-  localStorage.setItem("contactNumber", contactNumber);
-
-  var numberOfGuest = document.getElementById("numberOfGuest").value;
-  localStorage.setItem("numberOfGuest", numberOfGuest);
+  useEffect(() => {
+    console.log(bookingData);
+  }, [bookingData]);
 
   return (
     <div className="bookingForm">
@@ -79,7 +68,7 @@ function bookingPage(props) {
         </tr>
         <tr>
           <td colSpan={2}>
-            <Link to="/bookingConfirmationPage">
+            <Link to="/booking/bookingConfirmationPage">
               <button> Next </button>
             </Link>
           </td>
@@ -87,6 +76,6 @@ function bookingPage(props) {
       </table>
     </div>
   );
-}
+};
 
-export default bookingPage;
+export default BookingPage;

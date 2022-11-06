@@ -1,9 +1,40 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { React, useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 import "../pages/signIn.css";
 import LogoImg from "/home/himansu/Desktop/Projects/HMS/hotel-management-system-frontend/hms-frontend/src/media/logo-color.png";
 
 const SignIn = () => {
+  const [userid, setUserid] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (localStorage.getItem("user-info")) {
+      navigate("/localUser");
+    }
+  });
+
+  const authenticate = async () => {
+    const response = await axios({
+      url: "http://localhost:9000/api/rooms/signin",
+      method: "POST",
+      data: { userid: userid, password: password },
+    })
+      .then((res) => res.data)
+      .catch((error) => {
+        console.error(error);
+        return { success: false };
+      });
+
+    if (response.success) {
+      localStorage.setItem("user-info", JSON.stringify(response));
+      navigate("/localUser");
+    } else {
+      alert(`Error:  ${response.message}`);
+    }
+  };
+
   return (
     <>
       <div className="wrapper">
@@ -12,26 +43,40 @@ const SignIn = () => {
             <div className="logo">
               <img src={LogoImg} alt="Logo" />
             </div>
-            <div className="email">
+            <div className="Userid">
               <h3>
-                Email <i class="fa-solid fa-envelope"></i>
+                UserId <i className="fa-solid fa-envelope"></i>
               </h3>
               <div>
-                <input type="email" placeholder="john@gmail.com" />
+                <input
+                  id="userid"
+                  type="text"
+                  onChange={(e) => setUserid(e.target.value)}
+                  placeholder="john@gmail.com"
+                  required
+                />
               </div>
             </div>
             <div className="password">
               <h3>
-                Password <i class="fa-solid fa-lock"></i>
+                Password <i className="fa-solid fa-lock"></i>
               </h3>
               <div>
-                <input type="password" />
+                <input
+                  id="password"
+                  type="password"
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
               </div>
             </div>
             <div>
-              <Link to="/localUser">
-                <button class="ui inverted purple button">Submit</button>
-              </Link>
+              <button
+                className="ui inverted purple button"
+                onClick={authenticate}
+              >
+                Submit
+              </button>
             </div>
           </div>
           <div className="signfooter">
@@ -42,6 +87,7 @@ const SignIn = () => {
               Forgot Password
             </Link>
           </div>
+          <div id="message"></div>
         </div>
       </div>
     </>

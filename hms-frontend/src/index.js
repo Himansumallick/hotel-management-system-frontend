@@ -13,6 +13,8 @@ import Transport from "./components/pages/services/transport.js";
 import BookingPage from "./components/pages/bookings/bookingPage.js";
 import BookingConfirmationPage from "./components/pages/bookings/bookingConfirmationPage.js";
 import LocalUser from "./components/pages/localUser/localUser.js";
+import AddRoom from "./components/pages/localUser/addRoom";
+import BookingContainer from "./components/pages/bookings/bookingContainer";
 
 const router = createBrowserRouter([
   {
@@ -33,8 +35,18 @@ const router = createBrowserRouter([
         path: "dashboard",
         element: <Dashboard />,
       },
-      { path: "bookingPage", element: <BookingPage /> },
-      { path: "bookingConfirmationPage", element: <BookingConfirmationPage /> },
+      {
+        path: "booking",
+        element: <BookingContainer />,
+        children: [
+          { path: "bookingPage", element: <BookingPage /> },
+          {
+            path: "bookingConfirmationPage",
+            element: <BookingConfirmationPage />,
+          },
+        ],
+      },
+      { path: "addRoom", element: <AddRoom /> },
       {
         path: "services",
         element: <Services />,

@@ -40,7 +40,7 @@ function roomInfoView(props) {
           <h1>Price: $ {price}</h1>
         </div>
         <div>
-          <Link to="/bookingPage">
+          <Link to="/booking/bookingPage">
             <button class="ui green button" onClick={BookingPage}>
               Book Now
             </button>{" "}
