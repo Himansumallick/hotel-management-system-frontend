@@ -27,7 +27,7 @@ function Navbar() {
           </Link>
         </div>
         <div class="box d">
-          <Link to="/signin" className="nav-links">
+          <Link to="/localSignin/signin" className="nav-links">
             SIGNIN
           </Link>
         </div>

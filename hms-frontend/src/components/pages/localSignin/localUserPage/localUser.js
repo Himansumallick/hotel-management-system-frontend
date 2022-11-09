@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "semantic-ui-react";
-import "../localUser/localUser.css";
+import "/home/himansu/Desktop/Projects/HMS/hotel-management-system-frontend/hms-frontend/src/components/pages/localSignin/localUserPage/localUser.js";
 
 function localUser() {
   return (
@@ -9,7 +9,7 @@ function localUser() {
       <div>
         <div className="localUser">
           <div className="first">
-            <Link to="/addRoom">
+            <Link to="/localSignin/addRoom">
               {" "}
               <Button color="grey">Add a Room</Button>
             </Link>

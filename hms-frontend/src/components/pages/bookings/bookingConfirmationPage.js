@@ -1,20 +1,32 @@
 import React from "react";
+import { useOutletContext } from "react-router-dom";
 
-function bookingConfirmationPage() {
+const BookingConfirmationPage = () => {
+  const [bookingData] = useOutletContext();
+
+  const {
+    roomNumber,
+    inDate,
+    outDate,
+    bookedBy,
+    contactNumber,
+    numberOfGuest,
+  } = bookingData;
+
   return (
     <div className="bookingConfirmationPage">
       <form action="">
         <div>Confirmation Page</div>
-        <div>Room number:</div>
-        <div>CheckIn Date:</div>
-        <div>CheckOut Date:</div>
-        <div>Booked By:</div>
-        <div>Contact Number:</div>
-        <div>Number of Guest:</div>
+        <div>Room number:{roomNumber}</div>
+        <div>CheckIn Date:{inDate}</div>
+        <div>CheckOut Date:{outDate}</div>
+        <div>Booked By:{bookedBy}</div>
+        <div>Contact Number:{contactNumber}</div>
+        <div>Number of Guest:{numberOfGuest}</div>
         <div></div>
       </form>
     </div>
   );
-}
+};
 
-export default bookingConfirmationPage;
+export default BookingConfirmationPage;

@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import "../pages/signIn.css";
+import "/home/himansu/Desktop/Projects/HMS/hotel-management-system-frontend/hms-frontend/src/components/pages/localSignin/signIn.css";
 import LogoImg from "/home/himansu/Desktop/Projects/HMS/hotel-management-system-frontend/hms-frontend/src/media/logo-color.png";
 
 const SignIn = () => {

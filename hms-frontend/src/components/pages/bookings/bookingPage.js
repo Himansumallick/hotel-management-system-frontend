@@ -1,79 +1,104 @@
 import React from "react";
 import { useEffect } from "react";
-import { Link, useOutletContext } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 import "../bookings/bookingPage.css";
 
 const BookingPage = () => {
   const [bookingData, setBookingData] = useOutletContext();
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    console.log(bookingData);
-  }, [bookingData]);
+  useEffect(() => {}, [bookingData]);
+
+  const handleSubmit = () => {
+    navigate("/booking/bookingConfirmationPage");
+  };
+
+  const onChange = (e) => {
+    const inputName = e.target.name;
+    const value = e.target.value;
+    setBookingData({ ...bookingData, [inputName]: value });
+  };
 
   return (
     <div className="bookingForm">
-      <table>
-        <tr>
-          <td colSpan={2}>
-            <h2>Booking Information</h2>
-          </td>
-        </tr>
-        <tr>
-          <td text-align="right">Room number:</td>
-          <td>
-            <input id="roomNumber" type="number" required />
-          </td>
-        </tr>
-        <tr>
-          <td>CheckIn Date:</td>
-          <td>
-            <input type="date" name="indate" id="checkinDate" required />
-          </td>
-        </tr>
-        <tr>
-          <td> CheckOut Date:</td>
-          <td>
-            <input type="date" name="outdate" id="checkoutoutDate" required />
-          </td>
-        </tr>
-        <tr>
-          <td>Booked By:</td>
-          <td>
-            <input id="bookedBy" type="text" maxLength={20} required />
-          </td>
-        </tr>
-        <tr>
-          <td>Contact Number:</td>
-          <td>
-            <input id="contactNumber" type="tel" maxLength={13} required />
-          </td>
-        </tr>
-        <tr>
-          <td>Number of Guest:</td>
-          <td>
-            <input
-              id="numberOfGuest"
-              type="Number"
-              list="numberOfGuest"
-              min={1}
-              required
-            />
-            <datalist id="numberOfGuest">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-            </datalist>
-          </td>
-        </tr>
-        <tr>
-          <td colSpan={2}>
-            <Link to="/booking/bookingConfirmationPage">
-              <button> Next </button>
-            </Link>
-          </td>
-        </tr>
-      </table>
+      <form>
+        <div>
+          <h2>Booking Information</h2>
+        </div>
+        <div>
+          <h3>Room number:</h3>
+          <input
+            type="text"
+            id="roomNumber"
+            name="roomNumber"
+            value={bookingData.roomNumber}
+            onChange={onChange}
+            required
+          />
+        </div>
+        <div>
+          <h3>CheckIn Date:</h3>
+          <input
+            type="date"
+            name="inDate"
+            id="inDate"
+            value={bookingData.inDate}
+            onChange={onChange}
+            required
+          />
+        </div>
+        <div>
+          <h3>CheckOut Date:</h3>
+          <input
+            type="date"
+            name="outDate"
+            id="outDate"
+            value={bookingData.outDate}
+            onChange={onChange}
+            required
+          />
+        </div>
+        <div>
+          <h3>Booked By:</h3>
+          <input
+            type="text"
+            maxLength={20}
+            id="bookedBy"
+            name="bookedBy"
+            value={bookingData.bookedBy}
+            onChange={onChange}
+            required
+          />
+        </div>
+        <div>
+          {" "}
+          <h3>Contact Number:</h3>
+          <input
+            type="text"
+            maxLength={13}
+            id="contactNumber"
+            name="contactNumber"
+            value={bookingData.contactNumber}
+            onChange={onChange}
+            required
+          />
+        </div>
+        <div>
+          <h3> Number of Guest(Maximum 4):</h3>
+          <input
+            type="text"
+            min={1}
+            id="numberOfGuest"
+            name="numberOfGuest"
+            value={bookingData.numberOfGuest}
+            onChange={onChange}
+            required
+          />
+        </div>
+        <div>
+          <button onClick={handleSubmit}> Next </button>
+        </div>
+      </form>
     </div>
   );
 };
