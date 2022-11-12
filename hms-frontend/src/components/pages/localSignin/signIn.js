@@ -15,7 +15,7 @@ const SignIn = () => {
     if (localStorage.getItem("user-info")) {
       setIsLoggedin(true);
     }
-  });
+  }, []);
 
   const authenticate = async () => {
     const response = await axios({
@@ -115,7 +115,7 @@ const SignIn = () => {
         ) : (
           <>
             <div>
-              <h2>LocalUser LoggedIn</h2>
+              <h2>LocalUser Logged In</h2>
               <div className="localUser">
                 <div className="first">
                   <Link to="/localSignin/addRoom">

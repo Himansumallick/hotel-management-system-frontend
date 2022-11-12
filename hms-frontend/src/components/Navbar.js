@@ -6,27 +6,27 @@ import Home from "./pages/Home";
 function Navbar() {
   return (
     <>
-      <div class="nav_wrapper">
-        <div class="box a">
+      <div className="nav_wrapper">
+        <div className="box a">
           <Link to="/" className="navbar-logo" element={<Home />}>
             <h1>
               GALAXY
-              <i class="fa-sharp fa-solid fa-hotel"></i>
+              <i className="fa-sharp fa-solid fa-hotel"></i>
               RESORT
             </h1>
           </Link>
         </div>
-        <div class="box b">
+        <div className="box b">
           <Link to="/" className="nav-links" element={<Home />}>
             HOME
           </Link>
         </div>
-        <div class="box c">
+        <div className="box c">
           <Link to="/services" className="nav-links">
             SERVICES
           </Link>
         </div>
-        <div class="box d">
+        <div className="box d">
           <Link to="/localSignin/signin" className="nav-links">
             SIGNIN
           </Link>

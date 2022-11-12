@@ -23,7 +23,7 @@ const BookingConfirmationPage = () => {
         <div>Booked By:{bookedBy}</div>
         <div>Contact Number:{contactNumber}</div>
         <div>Number of Guest:{numberOfGuest}</div>
-        <div></div>
+        <div className="payment"></div>
       </form>
     </div>
   );

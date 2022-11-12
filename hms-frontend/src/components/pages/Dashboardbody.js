@@ -33,7 +33,7 @@ const Dashboardbody = () => {
         </div>
         <div className="search">
           <div>
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <i className="fa-solid fa-magnifying-glass"></i>
           </div>
           <div>
             <Button basic inverted color="purple">

@@ -12,7 +12,7 @@ import Music from "./components/pages/services/music.js";
 import Transport from "./components/pages/services/transport.js";
 import BookingPage from "./components/pages/bookings/bookingPage.js";
 import BookingConfirmationPage from "./components/pages/bookings/bookingConfirmationPage.js";
-import AddRoom from "./components/pages/localSignin/localUserPage/addRoom";
+import AddRoom from "./components/pages/localSignin/addRoom";
 import BookingContainer from "./components/pages/bookings/bookingContainer";
 import LocalSignin from "./components/pages/localSignin/localSignin";
 
