@@ -84,3 +84,13 @@ img {
    height: 100%;
    object-fit: cover;
 }
+
+.localUser {
+   display: flex;
+   flex-direction: column;
+   background-color: rgb(38, 36, 36);
+   height: 100vh;
+   width: 100vw;
+   place-items: center;
+   row-gap: 200px;
+}

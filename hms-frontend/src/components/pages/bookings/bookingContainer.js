@@ -21,7 +21,7 @@ const BookingContainer = () => {
       bookingDataFromUrl[key] = value;
     });
     setBookingData({ ...bookingData, ...bookingDataFromUrl });
-  }, [bookingData]);
+  }, []);
 
   return <Outlet context={[bookingData, setBookingData]} />;
 };
