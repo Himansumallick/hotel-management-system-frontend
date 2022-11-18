@@ -22,7 +22,7 @@ const BookingPage = (props) => {
         <div>
           <h2>Booking Information</h2>
         </div>
-        <div>
+        {/* <div>
           <h3>Room number:</h3>
           <input
             type="text"
@@ -30,9 +30,10 @@ const BookingPage = (props) => {
             name="roomNumber"
             value={bookingData.roomNumber}
             onChange={onChange}
+            placeholder={}
             required
           />
-        </div>
+        </div> */}
         <div>
           <h3>CheckIn Date:</h3>
           <input
