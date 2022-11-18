@@ -3,7 +3,7 @@ import EachRoom from "../roomInfo/eachRoominfo.js";
 import { fetchAllRooms } from "../roomInfo/room.js";
 import "./room.css";
 
-const RoomList = () => {
+const RoomList = (props) => {
   const [rooms, setRooms] = useState([]);
 
   const getAllRooms = async () => {
@@ -23,7 +23,14 @@ const RoomList = () => {
   return (
     <section className="roomList">
       {rooms.map((eachRoom, index) => {
-        return <EachRoom key={eachRoom.id} eachRoom={eachRoom}></EachRoom>;
+        return (
+          <EachRoom
+            key={index}
+            setGlobalData={props.setGlobalData}
+            globalData={props.globalData}
+            eachRoom={eachRoom}
+          ></EachRoom>
+        );
       })}
     </section>
   );

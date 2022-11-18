@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate, useOutletContext } from "react-router-dom";
 import "../bookings/bookingPage.css";
 
-const BookingPage = () => {
+const BookingPage = (props) => {
   const [bookingData, setBookingData] = useOutletContext();
   const navigate = useNavigate();
 

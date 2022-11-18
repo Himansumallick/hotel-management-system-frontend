@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useOutlet, useOutletContext } from "react-router-dom";
 
 const defaultFormValue = {
   roomNumber: "",
@@ -13,6 +13,7 @@ const defaultFormValue = {
 
 const BookingContainer = () => {
   const [bookingData, setBookingData] = useState(defaultFormValue);
+  const [globalData, setGlobalData] = useOutletContext();
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -23,7 +24,11 @@ const BookingContainer = () => {
     setBookingData({ ...bookingData, ...bookingDataFromUrl });
   }, []);
 
-  return <Outlet context={[bookingData, setBookingData]} />;
+  return (
+    <Outlet
+      context={[bookingData, setBookingData, globalData, setGlobalData]}
+    />
+  );
 };
 
 export default BookingContainer;

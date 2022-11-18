@@ -3,7 +3,7 @@ import { Button } from "semantic-ui-react";
 import "../pages/Dashboardbody.css";
 import RoomList from "./roomInfo/roomList";
 
-const Dashboardbody = () => {
+const Dashboardbody = (props) => {
   return (
     <div className="dashboard">
       <div className="searchbar">
@@ -43,7 +43,10 @@ const Dashboardbody = () => {
         </div>
       </div>
       <div className="room_info">
-        <RoomList />
+        <RoomList
+          globalData={props.globalData}
+          setGlobalData={props.setGlobalData}
+        />
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import React from "react";
 import { useOutletContext } from "react-router-dom";
 
 const BookingConfirmationPage = () => {
-  const [bookingData] = useOutletContext();
+  const [bookingData, , globalData] = useOutletContext();
 
   const {
     roomNumber,
@@ -12,6 +12,19 @@ const BookingConfirmationPage = () => {
     contactNumber,
     numberOfGuest,
   } = bookingData;
+
+  const {
+    room_number,
+    occupants_capacity,
+    number_of_bed,
+    has_ac,
+    is_seafacing,
+    has_sunset_view,
+    price,
+    image,
+  } = globalData.roomInfo;
+
+  console.log(has_ac);
 
   return (
     <div className="bookingConfirmationPage">

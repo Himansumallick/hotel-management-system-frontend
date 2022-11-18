@@ -1,8 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./room.css";
 
-function roomInfoView(props) {
+function RoomInfoView(props) {
   const {
     room_number,
     occupants_capacity,
@@ -13,6 +13,7 @@ function roomInfoView(props) {
     price,
     image,
   } = props.eachRoom;
+  const navigate = useNavigate();
 
   return (
     <article className="roomInfoContainer">
@@ -39,9 +40,30 @@ function roomInfoView(props) {
           <h1>Price: $ {price}</h1>
         </div>
         <div>
-          <Link to="/booking/bookingPage">
-            <button class="ui green button">Book Now</button>{" "}
-          </Link>
+          <button
+            className="ui green button"
+            onClick={() => {
+              props.setGlobalData({
+                ...props.globalData,
+                roomInfo: {
+                  room_number: room_number,
+                  occupants_capacity: occupants_capacity,
+                  number_of_bed: number_of_bed,
+                  has_ac: has_ac,
+                  is_seafacing: is_seafacing,
+                  has_sunset_view: has_sunset_view,
+                  price: price,
+                  image: image,
+                },
+              });
+              navigate("/booking/bookingPage");
+            }}
+          >
+            Book Now
+          </button>{" "}
+          {/* <Link to="/booking/bookingPage">
+            
+          </Link> */}
         </div>
       </div>
       <div className="imgdiv">
@@ -51,4 +73,4 @@ function roomInfoView(props) {
   );
 }
 
-export default roomInfoView;
+export default RoomInfoView;

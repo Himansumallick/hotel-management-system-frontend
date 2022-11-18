@@ -15,7 +15,7 @@ function Herosection() {
       <div className="hero-btns">
         <Link to="/dashboard">
           <Button inverted color="yellow">
-            Start Booking <i class="fa-solid fa-plane-departure"></i>
+            Start Booking <i className="fa-solid fa-plane-departure"></i>
           </Button>
         </Link>
       </div>
