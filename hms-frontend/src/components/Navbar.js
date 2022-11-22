@@ -1,39 +1,45 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./Navbar.css";
-import Home from "./pages/Home";
 
-function Navbar() {
+function Navbars() {
   return (
     <>
-      <div className="nav_wrapper">
-        <div className="box a">
-          <Link to="/" className="navbar-logo" element={<Home />}>
-            <h1>
+      <nav class="navbar navbar-default ">
+        <div class="container ">
+          <div class="navbar-header ">
+            <button
+              type="button"
+              class="navbar-toggle"
+              data-toggle="collapse"
+              data-target="#myNavbar"
+            >
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand " href="/home">
               GALAXY
               <i className="fa-sharp fa-solid fa-hotel"></i>
               RESORT
-            </h1>
-          </Link>
+            </a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <a href="/home">HOME</a>
+              </li>
+              <li>
+                <a href="/services">SERVICES</a>
+              </li>
+              <li>
+                <a href="/localSignin/signin">SIGNIN</a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div className="box b">
-          <Link to="/" className="nav-links" element={<Home />}>
-            HOME
-          </Link>
-        </div>
-        <div className="box c">
-          <Link to="/services" className="nav-links">
-            SERVICES
-          </Link>
-        </div>
-        <div className="box d">
-          <Link to="/localSignin/signin" className="nav-links">
-            SIGNIN
-          </Link>
-        </div>
-      </div>
+      </nav>
     </>
   );
 }
 
-export default Navbar;
+export default Navbars;

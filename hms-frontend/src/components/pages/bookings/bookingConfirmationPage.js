@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import { useOutletContext } from "react-router-dom";
 
@@ -21,10 +22,35 @@ const BookingConfirmationPage = () => {
     //is_seafacing,
     //has_sunset_view,
     price,
-    image,
+    //image,
   } = globalData.roomInfo;
 
-  const updateBookingTable = () => {};
+  const updateBookingTable = async () => {
+    const bookingInfo = {
+      room_number: room_number,
+      checkin_date: inDate,
+      checkout_date: outDate,
+      booked_by: bookedBy,
+      no_of_occupants: numberOfGuest,
+      total_cost: totalPrice,
+      contact_number: contactNumber,
+    };
+    const response = await axios({
+      url: "http://localhost:9000/api/rooms/BookingConfirmationPage",
+      method: "POST",
+      data: bookingInfo,
+    })
+      .then((res) => res.data)
+      .catch((error) => {
+        console.error(error);
+        return { success: false };
+      });
+    if (response.success) {
+      alert("Booking Successfull");
+    } else {
+      alert(`Error:  ${response.message}`);
+    }
+  };
 
   const differnce = Math.abs(new Date(outDate) - new Date(inDate));
   const NumberOfDaysStayed = Math.ceil(differnce / (1000 * 3600 * 24));
@@ -33,7 +59,6 @@ const BookingConfirmationPage = () => {
   return (
     <div className="bookingConfirmationPage">
       <div>Confirmation Page</div>
-      <div>{image}</div>
       <div>Room number:{room_number}</div>
       <div>CheckIn Date:{inDate}</div>
       <div>CheckOut Date:{outDate}</div>

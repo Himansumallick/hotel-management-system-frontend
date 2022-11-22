@@ -15,6 +15,7 @@ import BookingConfirmationPage from "./components/pages/bookings/bookingConfirma
 import AddRoom from "./components/pages/localSignin/addRoom";
 import BookingContainer from "./components/pages/bookings/bookingContainer";
 import LocalSignin from "./components/pages/localSignin/localSignin";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const router = createBrowserRouter([
   {

@@ -6,9 +6,10 @@ const Footer = () => {
 
   return (
     <>
-      <div className="home_footer">
-        <h5>{`Copyright © GALAXY RESORT ${year} Created by HIMANSU MALLIK`}</h5>
-      </div>
+      {/* Footer */}
+      <footer class="container-fluid bg-4 text-center">
+        <h4>{`Copyright © GALAXY RESORT ${year} Created by HIMANSU MALLIK`}</h4>
+      </footer>
     </>
   );
 };

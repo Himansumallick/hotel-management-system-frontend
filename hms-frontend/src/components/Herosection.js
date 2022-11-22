@@ -1,25 +1,69 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Button } from "semantic-ui-react";
-import "semantic-ui-css/semantic.min.css";
 import "./Herosection.css";
-import "../App.css";
-import bgvideo from "../media/Time Lapse Video Of Night Sky.mp4";
+import img1 from "/home/himansu/Desktop/Projects/HMS/hotel-management-system-frontend/hms-frontend/src/images/room1.jpeg";
+import img2 from "/home/himansu/Desktop/Projects/HMS/hotel-management-system-frontend/hms-frontend/src/images/room2.jpeg";
+import img3 from "/home/himansu/Desktop/Projects/HMS/hotel-management-system-frontend/hms-frontend/src/images/room3.jpeg";
+import img6 from "/home/himansu/Desktop/Projects/HMS/hotel-management-system-frontend/hms-frontend/src/images/logo.png";
 
 function Herosection() {
   return (
-    <div className="hero-container">
-      <video src={bgvideo} type="video/mp4" loop autoPlay className="myVideo" />
-      <h1>ADVENTURE AWAITS</h1>
-      <p>BOOK YOUR ROOMS NOW</p>
-      <div className="hero-btns">
-        <Link to="/dashboard">
-          <Button inverted color="yellow">
-            Start Booking <i className="fa-solid fa-plane-departure"></i>
-          </Button>
-        </Link>
+    <>
+      {/* First Container */}
+      <div class="container-fluid bg-1 text-center">
+        <h3 class="margin">Book your Rooms!</h3>
+        <img
+          src={img6}
+          class="img-responsive img-circle margin"
+          style={{ display: "inline" }}
+          alt="Logo"
+          width="100px"
+          height="100px"
+        />
+        <h3>For exciting holidays</h3>
       </div>
-    </div>
+      {/* Second Container */}
+      <div class="container-fluid bg-2 text-center">
+        <h3 class="margin">Rooms you are looking for </h3>
+        <p>Book Your Rooms Now</p>
+        <a href="/booking/BookingPage" class="btn btn-default btn-lg">
+          <span class="glyphicon glyphicon-search"></span> BOOK
+        </a>
+      </div>
+      {/* Third Container (Grid) */}
+      <div class="container-fluid bg-3 text-center">
+        <h3 class="margin">ROOMS YOU CAN LOOK FOR</h3>
+        <br />
+        <div class="row">
+          <div class="col-sm-4">
+            <p> Feel The Luxory</p>
+            <img
+              src={img1}
+              class="img-responsive margin"
+              style={{ width: "100%" }}
+              alt="Image1"
+            />
+          </div>
+          <div class="col-sm-4">
+            <p>Pour Your Creativity</p>
+            <img
+              src={img2}
+              class="img-responsive margin"
+              style={{ width: "100%" }}
+              alt="Image2"
+            />
+          </div>
+          <div class="col-sm-4">
+            <p>Enjoy The Sunset</p>
+            <img
+              src={img3}
+              class="img-responsive margin"
+              style={{ width: "100%" }}
+              alt="Image3"
+            />
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
 
